@@ -1,19 +1,8 @@
-# BookingMx Testing Project — Sprint 1
-
-## 📘 Context
-
-**Teresa González** and **Karen Martínez** work at **BookingMx**, a Mexican website dedicated to the hotel industry.  
-As members of the IT development team, they implemented a new feature: a **graph displaying nearby cities** relative to the customer’s destination and the distances between them.
-
-After developing the MVP, the team optimized the code to improve performance. However, the new version failed in production — teaching an important lesson about the **need for unit testing** and **proper documentation**.
-
-In the next sprint, Teresa created **unit tests for the JavaScript module** using **Jest**, while Karen handled **unit tests for the Java reservation module** using **JUnit**. Both agreed that all modules should reach **at least 90% code coverage** and include clear documentation.
-
----
+# ch7techno Testing Project — Sprint 1
 
 ## 🎯 Project Objective
 
-Improve the reliability and performance of the BookingMx system by implementing automated **unit tests** for the backend and frontend modules.
+Improve the reliability and performance of the ch7techno system by implementing automated **unit tests** for the backend and frontend modules.
 
 ### Modules:
 - **Backend (Java)** — Reservation management with JUnit + JaCoCo.  
@@ -74,23 +63,6 @@ Improve the reliability and performance of the BookingMx system by implementing 
 
 ---
 
-## 🧩 Issue Log
-
-Development challenges, bugs, and solutions were documented in a separate log file for continuous improvement.
-
-File location:
-```
-docs/issues-log.md
-```
-
-Each entry includes:
-- **Problem**
-- **Cause**
-- **Solution**
-- **Validation result**
-
----
-
 ## 🗂️ Project Structure
 
 ```
@@ -102,9 +74,6 @@ ch7techno/
 │  ├─ cityGraph.js
 │  ├─ cityGraph.test.js
 │  └─ coverage/lcov-report/index.html
-├─ docs/
-│  ├─ issues-log.md
-│  └─ screenshots/   ← (evidence saved separately)
 ├─ pom.xml
 └─ README.md
 ```
@@ -133,9 +102,9 @@ ch7techno/
 
 ## 🧑‍💻 Author
 
-**Ricardo**  
+**Ricardo and Melany**  
 Developer — *TechnoReady Project CH7*  
-Faculty of Biotechnology Engineering, 2025  
+Faculty of Engineering, 2025  
 
 ---
 
