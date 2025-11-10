@@ -1012,3 +1012,77 @@ This project was developed for educational purposes under free and open-source t
 Last Updated: November 8, 2025  
 Version: 1.0.0  
 Sprint: 1 (Completed)
+
+## Sprint 2 — JavaScript Graph Visualization Testing
+
+[![Jest](https://img.shields.io/badge/Jest-29.x-99425B.svg)](https://jestjs.io/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933.svg)](https://nodejs.org/)
+[![JS Coverage (Stmts)](https://img.shields.io/badge/Statements-98.03%25-brightgreen.svg)](./frontend-js/coverage/lcov-report/index.html)
+[![JS Coverage (Branches)](https://img.shields.io/badge/Branches-93.02%25-brightgreen.svg)](./frontend-js/coverage/lcov-report/index.html)
+[![JS Coverage (Funcs)](https://img.shields.io/badge/Functions-100%25-brightgreen.svg)](./frontend-js/coverage/lcov-report/index.html)
+[![JS Coverage (Lines)](https://img.shields.io/badge/Lines-100%25-brightgreen.svg)](./frontend-js/coverage/lcov-report/index.html)
+
+### 🎯 Sprint Goal
+Implement **unit tests with Jest** for the city graph visualization module (nearby cities and distances), reaching **≥90%** coverage and validating edge cases and error handling.
+
+---
+
+### 🧩 Module Scope (Sprint 2)
+**Main file:** `frontend-js/src/cityGraph.js`  
+**Public functions**:
+- `haversineKm(a, b)` — distance in km (Haversine) between two coordinates.
+- `buildGraph(nodes, edges)` — builds an **undirected** graph with distance weights (km); validates nodes/edges, ignores self-loops, and de-duplicates edges.
+- `findNearby(graph, cityId, maxKm=200)` — neighbors within radius, sorted by km and (tie) by `cityId`.
+
+**Tests:** `frontend-js/src/cityGraph.test.js`  
+Coverage includes:
+- Happy paths (correct distances and adjacency).
+- Validations: invalid nodes, non-finite `lat/lon`, null edges, edges to unknown nodes.
+- Edge cases: **equal distances** (stable order by `cityId`), **default radius** (200 km), **inclusive boundary** (exact distance).
+
+---
+
+### ✅ Test Results (Sprint 2)
+| Metric     | Result   |
+|------------|----------|
+| Statements | **98.03%** |
+| Branches   | **93.02%** |
+| Functions  | **100%** |
+| Lines      | **100%** |
+| Tests      | **15** (all `PASS`) |
+
+**HTML report:** `frontend-js/coverage/lcov-report/index.html`
+
+---
+
+### ⚙️ How to Run (Frontend-JS)
+```bash
+cd frontend-js
+npm install
+npm test               # runs tests + console coverage
+# open interactive HTML report:
+# frontend-js/coverage/lcov-report/index.html
+```
+
+### 🧪 Key Cases Covered
+
+- `Haversine calculation (e.g., Monterrey–Saltillo ~70–100 km).
+- `Undirected graph build with weights; edge de-duplication and self-loop ignore.
+- `Stable ordering in findNearby when distances are equal (tie-break by cityId).
+- `Default radius (200 km) and inclusive boundary.
+- `Robust validation: nodes/edges not arrays, edge not an object or null, non-finite lat/lon (Infinity/NaN), edges to unknown nodes.
+
+### 📂 Sprint 2 Relevant Files
+
+```
+frontend-js/
+└─ src/
+   ├─ cityGraph.js        # graph logic (validations + stable ordering)
+   └─ cityGraph.test.js   # 15 tests: happy paths + edges + errors
+coverage/
+└─ lcov-report/index.html # HTML coverage report
+```
+
+Last Updated: November 09, 2025  
+Version: 1.0.0  
+Sprint: 2 (Completed)
